@@ -8,7 +8,24 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+    <nav class="clearfix mar-b-1">
+      <ul class="no-bullets no-margin no-padding right">
+        <% if session[:user_id] == nil %>
+          <li class="pipe-separate left"><a href="/register">create account</a></li>
+          <li class="pipe-separate left"><a href="/login">login</a></li>
+          <li class="pipe-separate left"><a href="/">home</a></li>
+        <% elsif session[:user_id] != nil %>
+          <% user = User.find(session[:user_id]) %>
+          <li class="pipe-separate left"><%= user.name %></li>
+          <li class="pipe-separate left"><a href="/logout">logout</a></li>
+          <li class="pipe-separate left"><a href="/">home</a></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <%= yield %>
+  </div>
 
 </body>
 </html>
