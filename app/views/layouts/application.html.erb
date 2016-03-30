@@ -10,16 +10,15 @@
 
   <div class="container">
     <nav class="clearfix mar-b-1">
-      <ul class="no-bullets no-margin no-padding right">
+      <ul class="no-bullets no-margin no-padding right" id="append-login">
         <% if session[:user_id] == nil %>
-          <li class="pipe-separate left"><a href="/register">create account</a></li>
-          <li class="pipe-separate left"><a href="/login">login</a></li>
-          <li class="pipe-separate left"><a href="/">home</a></li>
+          <li class="pipe-separate left"><%= link_to 'Create Account', new_user_path %></li>
+          <li class="pipe-separate left login"><%= link_to 'Login', new_user_path, remote: true %></li>
+          <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
         <% elsif session[:user_id] != nil %>
-          <% user = User.find(session[:user_id]) %>
-          <li class="pipe-separate left"><%= user.name %></li>
-          <li class="pipe-separate left"><a href="/logout">logout</a></li>
-          <li class="pipe-separate left"><a href="/">home</a></li>
+          <li class="pipe-separate left"><%= link_to current_user.username, user_path(current_user) %></li>
+          <li class="pipe-separate left"><%= link_to 'Logout', logout_path %></li>
+          <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
         <% end %>
       </ul>
     </nav>
