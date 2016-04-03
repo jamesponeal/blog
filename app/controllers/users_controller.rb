@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     if @user
-      render :show
+      render "show"
     else
       flash[:notice] = "Sorry, this user was not found!"
       redirect_to root_path
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages
-      render 'new'
+      render "new"
     end
   end
 
