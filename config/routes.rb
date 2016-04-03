@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/users/:user_id/posts' => 'posts#author_index', as: 'author_index'
+
   get '/logout' => 'users#destroy', as: 'logout'
   post '/login' => 'users#login', as: 'login'
 

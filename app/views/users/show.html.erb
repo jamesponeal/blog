@@ -1,5 +1,10 @@
 <h1><%= @user.first_name %>'s Profile Page</h1>
-
+<div>
+  <%=  link_to 'Edit Profile', edit_user_path(current_user) %>
+</div>
+<div>
+  <%= link_to 'Your Blog', author_index_path(current_user) %>
+</div>
 <div>
   <%= image_tag @user.image.url(:small) %>
 </div>
@@ -8,4 +13,3 @@
   <%= @user.description %>
 </div>
 
-<%=  link_to 'Edit Profile', edit_user_path(current_user) %>
