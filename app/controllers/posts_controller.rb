@@ -1,12 +1,19 @@
 class PostsController < ApplicationController
 
   def new
-
+    @post = Post.new
   end
 
 
   def create
-
+    author = User.find_by(id: session[:user_id])
+    @post = author.posts.new(post_params)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      flash[:errors] = @post.errors.full_messages
+      render :new
+    end
   end
 
 
@@ -18,7 +25,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     if @post
-      render "show"
+      render :show
     else
       flash[:notice] = "Sorry, this post was not found!"
       redirect_to root_path
@@ -35,14 +42,25 @@ class PostsController < ApplicationController
 
 
   def edit
-
+    @post = Post.find_by(id: params[:id])
   end
 
 
   def update
-
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      flash[:errors] = @post.errors.full_messages
+      render :edit
+    end
   end
 
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content, :author_id)
+  end
 
 
 
