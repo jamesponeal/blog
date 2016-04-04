@@ -1,3 +1,4 @@
+<%= link_to 'Back to Blog Index', author_index_path(current_user) %>
 <h1>Post Show Page!!</h1>
 <div>
   <%= @post.title %>
@@ -5,3 +6,9 @@
 <div>
   <%= @post.content %>
 </div>
+
+<% if @post.author_id == current_user.id %>
+  <div>
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+  </div>
+<% end %>

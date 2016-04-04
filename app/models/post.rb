@@ -5,5 +5,6 @@ class Post < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  validates :title, :content, :author_id, presence: true
 
 end
