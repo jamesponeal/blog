@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment :image, :content_type => {:content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 
   validates :username, presence: true, uniqueness: true
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :admin, presence: true
 
 
 end

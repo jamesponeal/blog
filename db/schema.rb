@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(version: 20160402150024) do
     t.string   "username"
     t.string   "password_digest"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.boolean  "admin",              default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
