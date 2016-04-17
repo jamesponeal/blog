@@ -18,7 +18,10 @@ class PostsController < ApplicationController
 
 
   def index
-
+    @posts = Post.all
+    if @posts
+      render :index
+    end
   end
 
 
