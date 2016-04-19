@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @comments = Comment.where(post_id: @post.id)
     if @post
       render :show
     else

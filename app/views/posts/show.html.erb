@@ -1,4 +1,4 @@
-<%= link_to 'Back to Blog Index', author_index_path(current_user) %>
+<%= link_to 'Back to Blog Index', posts_path %>
 <h1>Post Show Page!!</h1>
 <div>
   <%= @post.title %>
@@ -7,8 +7,30 @@
   <%= @post.content %>
 </div>
 
-<% if @post.author_id == current_user.id %>
-  <div>
-    <%= link_to 'Edit Post', edit_post_path(@post) %>
+<% if logged_in? %>
+  <% if current_user.admin %>
+    <div>
+      <%= link_to 'Edit Post', edit_post_path(@post) %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if logged_in? %>
+  <div class="comment-link">
+    <%= link_to 'Add Comment', new_post_comment_path(@post), remote: true %>
   </div>
+  <div id="append-comment-form"></div>
+<% else %>
+  <p>Create an account or login to add a comment.</p>
+<% end %>
+
+<% if @comments %>
+  <ul>
+    <% @comments.reverse.each do |comment| %>
+      <li>
+        <%= comment.content %><br>
+        by <%= comment_author_name(comment) %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>

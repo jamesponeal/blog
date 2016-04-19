@@ -11,11 +11,11 @@
   <div class="container">
     <nav class="clearfix mar-b-1">
       <ul class="no-bullets no-margin no-padding right" id="append-login">
-        <% if session[:user_id] == nil %>
+        <% if !logged_in? %>
           <li class="pipe-separate left"><%= link_to 'Create Account', new_user_path %></li>
           <li class="pipe-separate left login"><%= link_to 'Login', new_user_path, remote: true %></li>
           <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
-        <% elsif session[:user_id] != nil %>
+        <% elsif logged_in? %>
           <li class="pipe-separate left"><%= link_to current_user.username, user_path(current_user) %></li>
           <li class="pipe-separate left"><%= link_to 'Logout', logout_path %></li>
           <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
