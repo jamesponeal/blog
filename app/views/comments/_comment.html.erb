@@ -1,0 +1,4 @@
+<%= form_for [@post, @comment] do |f| %>
+  <li><%= f.text_field :content, :placeholder => "comment" %></li>
+  <li><%= f.submit "Submit" %></li>
+<% end %>
