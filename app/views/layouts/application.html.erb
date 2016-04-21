@@ -6,25 +6,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <div class="container">
-    <nav class="clearfix mar-b-1">
-      <ul class="no-bullets no-margin no-padding right" id="append-login">
+<body class="row background-2e342a">
+  <div class="col-md-1"> </div>
+  <div class="col-md-10 chicagoskylineimage">
+    <div class="row">
+      <nav class="col-md-6">
+        <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
+        <span class="pipe-separate"><%= link_to 'Blog', posts_path %></span>
+        <span class="pipe-separate"><%= link_to 'About Me', about_path %></span>
+        <span class="pipe-separate"><%= link_to 'Resume', resume_path %></span>
+      </nav>
+      <nav class="col-md-6" id="append-login">
         <% if !logged_in? %>
-          <li class="pipe-separate left"><%= link_to 'Create Account', new_user_path %></li>
-          <li class="pipe-separate left login"><%= link_to 'Login', new_user_path, remote: true %></li>
-          <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
+          <span class="pipe-separate"><%= link_to 'Create Account', new_user_path %></span>
+          <span class="pipe-separate login"><%= link_to 'Login', new_user_path, remote: true %></span>
+          <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
         <% elsif logged_in? %>
-          <li class="pipe-separate left"><%= link_to current_user.username, user_path(current_user) %></li>
-          <li class="pipe-separate left"><%= link_to 'Logout', logout_path %></li>
-          <li class="pipe-separate left"><%= link_to 'Home', root_path %></li>
+          <span class="pipe-separate"><%= link_to current_user.username, user_path(current_user) %></span>
+          <span class="pipe-separate"><%= link_to 'Logout', logout_path %></span>
+          <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
         <% end %>
-      </ul>
-    </nav>
+      </nav>
+    </div>
 
     <%= yield %>
   </div>
-
+  <div class="col-md-1"> </div>
 </body>
 </html>
