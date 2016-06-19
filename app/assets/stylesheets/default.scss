@@ -2,21 +2,34 @@
   background-color: #2e342a;
 }
 
-.chicagoskylineimage {
-  background: url("chicagoskyline.jpg") no-repeat;
-  background-size: cover;
+.skyline {
+  width: 100%;
+  z-index: -1;
+  height: 375px;
 }
 
 .profilephoto {
   height: 300px;
-  width: 215px;
+  width: 216px;
   border: 7px solid #FFFBF7;
   border-radius: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -108px;
+  top: 75px;
+}
+
+.index-title {
+  position: absolute;
+  top: 22px;
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+}
+
+.index-text{
+  color: white;
+  font-size: 16px;
 }
 
 nav {
@@ -25,6 +38,7 @@ nav {
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
   color: #8585ad;
+  font-size: 16px;
 }
 
 
@@ -224,4 +238,15 @@ nav:visited{
   padding-right: 0;
   border-right: none;
 }
+
+.width-100 {
+  width: 100%;
+}
+
+.z-1 {
+  z-index:-1;
+}
+
+
+
 
