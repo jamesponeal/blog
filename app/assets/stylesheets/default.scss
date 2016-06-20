@@ -5,7 +5,7 @@
 .skyline {
   width: 100%;
   z-index: -1;
-  height: 375px;
+  height: 370px;
 }
 
 .profilephoto {
@@ -21,7 +21,7 @@
 
 .index-title {
   position: absolute;
-  top: 22px;
+  top: 24px;
   width: 100%;
   text-align: center;
   font-size: 36px;
@@ -40,7 +40,7 @@
 .login-box{
   position: absolute;
   width: 200px;
-  top: 25px;
+  top: 30px;
   left: 80%;
   border: 3px solid #FFFBF7;
   border-radius: 20px;
@@ -49,13 +49,25 @@
   text-align: center;
 }
 
+h1{
+  font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
+  font-weight: 100;
+  color: #8585ad;
+}
+
+.nav-highlight{
+  background-color: #2e342a;
+  border-radius: 3px;
+  padding: 1px;
+}
+
 nav {
   text-align: center;
   background-color: black;
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
   color: #8585ad;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
