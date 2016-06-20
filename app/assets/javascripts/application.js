@@ -16,3 +16,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+
+// $(document).ready(function() {
+//   $(document).on("click",".nav-link",function(){
+//     $(this).addClass('nav-highlight');
+//   });
+// });

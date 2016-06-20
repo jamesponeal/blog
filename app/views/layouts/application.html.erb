@@ -11,19 +11,17 @@
   <div class="col-md-10">
     <div class="row">
       <nav class="col-md-6">
-        <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
-        <span class="pipe-separate"><%= link_to 'Blog', posts_path %></span>
-        <span class="pipe-separate"><%= link_to 'Resume', resume_path %></span>
+        <span class="pipe-separate"><%= link_to 'Home', root_path, :class => "nav-link home-link" %></span>
+        <span class="pipe-separate"><%= link_to 'Blog', posts_path, :class => "nav-link blog-link" %></span>
+        <span class="pipe-separate"><%= link_to 'Resume', resume_path, :class => "nav-link resume-link" %></span>
       </nav>
       <nav class="col-md-6">
         <% if !logged_in? %>
-          <span class="pipe-separate"><%= link_to 'Create Account', new_user_path %></span>
+          <span class="pipe-separate"><%= link_to 'Create Account', new_user_path, :class => "nav-link create-link" %></span>
           <span class="pipe-separate login"><%= link_to 'Login', new_user_path, remote: true %></span>
-          <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
         <% elsif logged_in? %>
-          <span class="pipe-separate"><%= link_to current_user.username, user_path(current_user) %></span>
+          <span class="pipe-separate"><%= link_to current_user.username, user_path(current_user), :class => "nav-link profile-link" %></span>
           <span class="pipe-separate"><%= link_to 'Logout', logout_path %></span>
-          <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
         <% end %>
       </nav>
     </div>
