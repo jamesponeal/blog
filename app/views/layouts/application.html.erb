@@ -15,7 +15,7 @@
         <span class="pipe-separate"><%= link_to 'Blog', posts_path %></span>
         <span class="pipe-separate"><%= link_to 'Resume', resume_path %></span>
       </nav>
-      <nav class="col-md-6" id="append-login">
+      <nav class="col-md-6">
         <% if !logged_in? %>
           <span class="pipe-separate"><%= link_to 'Create Account', new_user_path %></span>
           <span class="pipe-separate login"><%= link_to 'Login', new_user_path, remote: true %></span>
@@ -26,6 +26,8 @@
           <span class="pipe-separate"><%= link_to 'Home', root_path %></span>
         <% end %>
       </nav>
+    </div>
+    <div id="append-login">
     </div>
 
     <%= yield %>

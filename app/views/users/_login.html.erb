@@ -1,6 +1,9 @@
-<%= form_for @user, url: login_path do |f| %>
-  <li><%= f.text_field :username, :placeholder => "username" %></li>
-  <li><%= f.text_field :password, type: "password", :placeholder => "password"%></li>
-  <li><%= f.submit "Login" %></li>
-
-<% end %>
+<div class="row">
+  <%= form_for @user, url: login_path do |f| %>
+    <ul class="no-bullets">
+      <li class="mar-t-1"><%= f.text_field :username, :placeholder => "username" %></li>
+      <li class="mar-t-1"><%= f.text_field :password, type: "password", :placeholder => "password"%></li>
+      <li class="mar-t-1"><%= f.submit "Login" %></li>
+    </ul>
+  <% end %>
+</div>

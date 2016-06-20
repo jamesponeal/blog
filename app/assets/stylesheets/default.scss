@@ -32,6 +32,23 @@
   font-size: 16px;
 }
 
+.no-bullets{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.login-box{
+  position: absolute;
+  width: 200px;
+  top: 25px;
+  left: 80%;
+  border: 3px solid #FFFBF7;
+  border-radius: 20px;
+  z-index: 10;
+  background-color: #2e342a;
+  text-align: center;
+}
+
 nav {
   text-align: center;
   background-color: black;
