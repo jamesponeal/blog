@@ -2,6 +2,10 @@
   background-color: #2e342a;
 }
 
+.background-00004d{
+  background-color: #00004d;
+}
+
 .skyline {
   width: 100%;
   z-index: -1;
@@ -11,7 +15,7 @@
 .profilephoto {
   height: 300px;
   width: 216px;
-  border: 7px solid #FFFBF7;
+  border: 5px solid #f2f2f2;
   border-radius: 20px;
   position: absolute;
   left: 50%;
@@ -24,11 +28,18 @@
   top: 24px;
   width: 100%;
   text-align: center;
+  font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
+  font-weight: 100;
   font-size: 36px;
 }
 
-.index-text{
-  color: white;
+.align-right{
+  float: right;
+  margin-right: 1em;
+}
+
+.standard-text{
+  color: #f2f2f2;
   font-size: 16px;
 }
 
@@ -42,17 +53,45 @@
   width: 200px;
   top: 30px;
   left: 80%;
-  border: 3px solid #FFFBF7;
+  border: 2px solid #337ab7;
   border-radius: 20px;
   z-index: 10;
   background-color: #2e342a;
   text-align: center;
 }
 
+.blog-container{
+  width: 60em;
+  margin: 0.5em 0em 0.5em 2em;
+  background-color: #3e4739;
+  border-radius: 10px;
+  min-height: 130px;
+  padding: 15px 15px 15px 15px;
+}
+
+
+.blog-row{
+  background-color: #3e4739;
+  border-radius: 10px;
+  width: 60em;
+  height: 3em;
+  margin: 0.5em 0em 0.5em 2em;
+  line-height: 3em;
+}
+
+
 h1{
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
-  color: #8585ad;
+  color: #337ab7;
+}
+
+.h2-text{
+  font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
+  font-weight: 100;
+  color: #f2f2f2;
+  font-size: 24px;
+  text-decoration: underline;
 }
 
 .nav-highlight{
@@ -66,7 +105,7 @@ nav {
   background-color: black;
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
-  color: #8585ad;
+  color: #337ab7;
   font-size: 20px;
 }
 
@@ -74,12 +113,12 @@ nav {
 nav:hover{
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
-  color: #8585ad;
+  color: #337ab7;
   text-decoration: none;
 }
 
 nav:visited{
-  color: red;
+  color: #337ab7;
 }
 
 
