@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at")
     if @posts
       render :index
     end

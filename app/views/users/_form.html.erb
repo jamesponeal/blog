@@ -1,32 +1,32 @@
 <%= form_for @user do |f| %>
 
-  <p class="index-text">
-    <%= f.label :first_name %><br>
+  <p>
+    <%= f.label :first_name, :class => 'standard-text' %><br>
     <%= f.text_field :first_name %>
   </p>
 
-  <p class="index-text">
-    <%= f.label :last_name %><br>
+  <p>
+    <%= f.label :last_name, :class => 'standard-text' %><br>
     <%= f.text_field :last_name %>
   </p>
 
-  <p class="index-text">
-    <%= f.label :username %><br>
+  <p>
+    <%= f.label :username, :class => 'standard-text' %><br>
     <%= f.text_field :username %>
   </p>
 
-  <p class="index-text">
-    <%= f.label :password %><br>
+  <p>
+    <%= f.label :password, :class => 'standard-text' %><br>
     <%= f.password_field :password %>
   </p>
 
-  <p class="index-text">
-    <%= f.label :description %><br>
+  <p>
+    <%= f.label :description, :class => 'standard-text' %><br>
     <%= f.text_field :description %>
   </p>
 
-  <p class="index-text">
-    <%= f.label :image %>
+  <p>
+    <%= f.label :image, :class => 'standard-text' %>
     <%= f.file_field :image %>
   </p>
 

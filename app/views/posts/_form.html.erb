@@ -1,12 +1,12 @@
 <%= form_for @post do |f| %>
 
   <p>
-    <%= f.label :title %><br>
+    <%= f.label :title, :class => 'standard-text' %><br>
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <%= f.label :content %><br>
+    <%= f.label :content, :class => 'standard-text'  %><br>
     <%= f.text_field :content %>
   </p>
 

@@ -5,14 +5,16 @@
     <%= link_to 'Create New Blog Post', new_post_path %>
   <% end %>
 <% end %>
-
 <% if @posts %>
-  <ul>
-    <% @posts.reverse.each do |post| %>
-      <li><%= link_to post.title, post_path(post) %></li>
-    <% end %>
-  </ul>
+  <% @posts.reverse.each do |post| %>
+    <div class="blog-row mar-t-1">
+      <span class="pad-l-1 standard-text"><%= link_to post.title, post_path(post) %></span>
+      <span class="standard-text align-right"><%= post.created_at.strftime("%m-%d-%Y") %></span>
+    </div>
+  <% end %>
 <% end %>
+
+
 <script>
   $('.nav-link').removeClass('nav-highlight');
   $('.blog-link').addClass('nav-highlight');
