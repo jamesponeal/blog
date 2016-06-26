@@ -1,24 +1,31 @@
 <h1>Blog Posts</h1>
 
-<% if logged_in? %>
-  <% if current_user.admin %>
-    <%= link_to 'Create New Blog Post', new_post_path %>
+<div class="blog-container">
+  <% if logged_in? %>
+    <% if current_user.admin %>
+      <%= link_to 'Create New Blog Post', new_post_path %>
+    <% end %>
   <% end %>
-<% end %>
-<% if @posts %>
-  <% @posts.reverse.each do |post| %>
-    <div class="blog-row mar-t-1">
-      <span class="pad-l-1 standard-text"><%= link_to post.title, post_path(post) %></span>
-      <span class="standard-text align-right"><%= post.created_at.strftime("%m-%d-%Y") %></span>
-    </div>
+  <% if @posts %>
+    <ul class="no-bullets">
+      <% @posts.reverse.each do |post| %>
+        <li class="mar-t-1">
+          <%= link_to post_path(post) do %>
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+              <span class="standard-text align-left"><%= post.title %></span><span class="text-12p align-right mar-t-1"><%= post.created_at.strftime('%m-%d-%Y') %></span>
+            </button>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
+</div>
 
 <script>
   $('#login-bar').removeClass();
   $('#nav-bar').removeClass();
-  $('#login-bar').addClass('col-md-6');
-  $('#nav-bar').addClass('col-md-6');
+  $('#login-bar').addClass('col-md-5');
+  $('#nav-bar').addClass('col-md-7');
   $('.nav-link').removeClass();
   $('.blog-link').addClass('nav-highlight');
 </script>
