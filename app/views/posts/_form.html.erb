@@ -5,12 +5,9 @@
     <%= f.text_field :title %>
   </p>
 
-  <p>
-    <%= f.label :content, :class => 'standard-text'  %><br>
-    <%= f.text_field :content %>
-  </p>
+  <%= f.cktext_area :content %>
 
-  <p>
+  <p class="mar-t-1">
     <%= f.submit %>
   </p>
 
