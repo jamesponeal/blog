@@ -1,9 +1,21 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+
 .background-2e342a{
   background-color: #2e342a;
 }
 
 .background-00004d{
   background-color: #00004d;
+}
+
+.icon {
+  height: 3em;
+  width: 3em;
 }
 
 .skyline {
@@ -39,6 +51,13 @@
 }
 
 .standard-text{
+  font-family: 'open sans',arial,sans-serif;
+  color: #f2f2f2;
+  font-size: 16px;
+}
+
+.courier-standard{
+  font-family: 'Courier New', 'Courier', monospace;
   color: #f2f2f2;
   font-size: 16px;
 }
@@ -62,7 +81,7 @@
 
 .blog-container{
   width: 60em;
-  margin: 0.5em 0em 0.5em 2em;
+  margin: 0 auto;
   background-color: #3e4739;
   border-radius: 10px;
   min-height: 130px;
@@ -75,8 +94,12 @@
   border-radius: 10px;
   width: 60em;
   height: 3em;
-  margin: 0.5em 0em 0.5em 2em;
+  margin: 0 auto;
   line-height: 3em;
+}
+
+.center-me {
+  margin: 0 auto;
 }
 
 

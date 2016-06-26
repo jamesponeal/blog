@@ -1,3 +1,28 @@
 <h1>About Me</h1>
-<p>Hello, my name is Jim.  I am originally from a small town on Michigan's west coast and relocated to Chicago, IL in October 2013.  I have a bachelor of science degree in mechanical engineering from Western Michigan University and worked as an engineer for 15 years, mostly in the manufacturing industry designing brakes and axles for heavy equipment, followed by some time in the nuclear power industry running seismic analysis on power plants. I felt that my creative side and problem solving skills were not being utilized, so I decided to embark on a career change into software development.  I recently graduated from DevBootcamp, an accelerated web development trade school, and am now looking for opportunities to join the software and web development industry.</p>
-<p>My hobbies include swing dancing, volleyball, kickboxing, movies, anything outside in the summer, hanging out with friends, good beer, and waffles... you can never have enough waffles.</p>
+<div class="blog-container">
+  <p class="standard-text">Hello, my name is Jim.  I am originally from a small town on Michigan's west coast and relocated to Chicago, IL in October 2013.  I have a bachelor of science degree in mechanical engineering from Western Michigan University and worked as an engineer for 15 years, mostly in the manufacturing industry designing brakes and axles for heavy equipment, followed by some time in the nuclear power industry running seismic analysis on power plants. I felt that my creative side and problem solving skills were not being utilized, so I decided to embark on a career change into software development.  I recently graduated from DevBootcamp, an accelerated 18 week software development school where I focused on HTML, CSS, Ruby, JavaScript, Ruby on Rails, jQuery, SQL, Active Record, principles of object-oriented programming and test-driven development. I am now looking for opportunities to join the software and web development industry.</p>
+  <p class="standard-text">My hobbies include swing dancing, volleyball, kickboxing, movies, writing code, anything outside in the summer, hanging out with friends, good beer, and waffles.</p>
+  <p class="standard-text">I built this website from scratch using HTML, CSS, Ruby on Rails, JavaScript, and jQuery. I am using a PostgreSQL database hosted on Heroku, which primarily exists to host the blog section of my site, where you can read about the random thoughts that go through my head.</p>
+  <center>
+  <p class="standard-text">To contact me, you can use the following:
+    <ul class="no-bullets">
+      <li class="courier-standard">jamesponeal@gmail.com</li>
+      <li class="courier-standard">269-757-6533</li>
+    </ul>
+  </p>
+  <p class="standard-text">
+    Or visit me at the following social media websites:<br>
+  <a href="https://www.linkedin.com/in/jamesponeal"><%= image_tag("linkedin-icon.png", class: "icon") %></a>
+  <a href="https://github.com/jamesponeal"><%= image_tag("github-icon-reverse.png", class: "icon") %></a>
+  <a href="https://twitter.com/jamesponeal"><%= image_tag("twitter-icon.png", class: "icon") %></a>
+  </p>
+  </center>
+</div>
+<script>
+  $('#login-bar').removeClass();
+  $('#nav-bar').removeClass();
+  $('#login-bar').hide();
+  $('#nav-bar').addClass('col-md-12');
+  $('.nav-link').removeClass('nav-highlight');
+  $('.about-link').addClass('nav-highlight');
+</script>
