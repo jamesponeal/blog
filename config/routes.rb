@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   get '/welcome/resume' => 'welcome#resume', as: 'resume'
   get '/welcome/about' => 'welcome#about', as: 'about'
+  get '/welcome/project' => 'welcome#project', as: 'project'
 
 end

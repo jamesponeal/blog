@@ -1,0 +1,204 @@
+    <p>ActiveRecord is a Ruby library for working with Relational SQL Databases like MySQL. It provides an Object Relational Mapping (ORM) with these core features: a single Ruby object maps to a database table.</p>
+    <p>Below are a list of common commands and notes that may be helpful to set up your Active Record database for a Ruby application.</p>
+
+    <p><u>FROM THE COMMAND LINE:</u></p>
+
+    <table>
+      <tr>
+        <td width="35%">To install the Bundler gem:</td>
+        <td width="65%"><span class="code">gem install bundler</span></td>
+      </tr>
+      <tr>
+        <td>To install the gems listed in the Gemfile:</td>
+        <td><span class="code">bundle install</span></td>
+      </tr>
+      <tr>
+        <td>To create the database:</td>
+        <td><span class="code">bundle exec rake db:create</span></td>
+      </tr>
+      <tr>
+        <td>To create a model file:</td>
+        <td><span class="code">bundle exec rake generate:model NAME=person</span></td>
+      </tr>
+      <tr>
+        <td>To create migration file:</td>
+        <td><span class="code">bundle exec rake generate:migration NAME=create_people</span></td>
+      </tr>
+      <tr>
+        <td>To run all migration files:</td>
+        <td><span class="code">bundle exec rake db:migrate</span></td>
+      </tr>
+      <tr>
+        <td>To populate the database with data from seed file:</td>
+        <td><span class="code">bundle exec rake db:seed</span></td>
+      </tr>
+      <tr>
+        <td>To open the Rake console:</td>
+        <td><span class="code">bundle exec rake console</span></td>
+      </tr>
+    </table>
+
+    <p><u>FROM THE RAKE CONSOLE</u> <i>(and also from any Ruby file connected to an Active Record database):</i><br>
+    The rake console can be used to generate SQL queries via the Active Record ORM.  Below are some examples of common commands that might be used (using a 'dogs' table and 'Dog' class as an example):</p>
+
+    <table>
+      <tr>
+        <td width="40%"><span class="code">Dog.all</span></td>
+        <td width="60%">Retreives all object instances of the Dog class.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.where(age: 1)</span></td>
+        <td>.where is a class method that can accept a hash argument that specifies the values of specific fields on the database table. In this case, we want all the dogs whose age is 1.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.order(age: :desc)</span></td>
+        <td>.order allows us to retrieve records ordered by specified attributes.  :desc specifies descending order.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.limit(2)</span></td>
+        <td>.limit allows us to specify a maximum number of records to return.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.order(age: :desc)</span></td>
+        <td>.order allows us to retrieve records ordered by specified attributes.  :desc specifies descending order.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.count</span></td>
+        <td>.count returns the number of records in the database.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.pluck(:name, :age)</span></td>
+        <td>.pluck allows us to retrieve just the values of specified fields.  .pluck doesn't create Dog class instances, it just gives us the values you ask for.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.first</span></td>
+        <td>.first returns the first record in the dogs table, ordered by primary key.  Optionally, you can pass an argument to get multiple objects back (e.g., Dog.first(2)); this would return a collection.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.find(3)</span></td>
+        <td>Knowing the value of its primary key (in the example, id is the primary key), we can retrieve that dog using the .find method. We can also specify an array of ID's, if we're looking for multiple records (e.g., Dog.find [1, 3]).</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.find_by(name: "Jayda")</span></td>
+        <td>To search for a dog with specific name use the .find_by method.  .find_by is similar to .where in that we can pass it a hash of attribute values that it should match. However, .where returns a collection of all records that match the given conditions. .find_by will return a single instance, even if there are multiple matches in the database.</td>
+      </tr>
+      <tr>
+        <td><span class="code">new_dog = Dog.new(name: "Bear")</span></td>
+        <td>Instantiating a new dog.</td>
+      </tr>
+      <tr>
+        <td><span class="code">new_dog.persisted?</span></td>
+        <td>Asking a dog object if it's been saved. Returns true or false.</td>
+      </tr>
+      <tr>
+        <td><span class="code">new_dog.save</span></td>
+        <td>Saving a dog to the database.</td>
+      </tr>
+      <tr>
+        <td><span class="code">Dog.create(name: "Max")</span></td>
+        <td>.create does .new and .save in one step.  Multiple dogs can be created by passing multiple hashes in an array.</td>
+      </tr>
+      <tr>
+        <td><span class="code-thin">Dog.find_or_initialize_by(license: "OH-9384764")</span></td>
+        <td>Find and return the dog with license OH-9384764 or instantiate an object with that license.</td>
+      </tr>
+      <tr>
+        <td><span class="code-thin">Dog.find_or_create_by(name: "Taj", license: "OH-9084736")</span></td>
+        <td>Find and return the dog with the name Taj and license OH-9084736 or instantiate and save an object with that name and license.</td>
+      </tr>
+    </table>
+
+    <p><u>BASIC MODEL FILE EXAMPLES:</u></p>
+
+    <p class="code">class Guess < ActiveRecord::Base<br>
+      &nbsp;&nbsp;belongs_to :user<br>
+      &nbsp;&nbsp;belongs_to :card<br>
+      &nbsp;&nbsp;belongs_to :round<br>
+    end</p>
+
+    <p class="code">class User < ActiveRecord::Base<br>
+      &nbsp;&nbsp;has_many :guesses<br>
+      &nbsp;&nbsp;has_many :rounds<br>
+      &nbsp;&nbsp;has_many :cards, through: :guesses<br>
+      &nbsp;&nbsp;has_many :decks, through: :rounds<br>
+    end</p>
+
+    <p><u>BASIC MIGRATION FILE EXAMPLES:</u></p>
+
+    <p class="code">class CreateEntries < ActiveRecord::Migration<br>
+      &nbsp;&nbsp;def change<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;create_table :entries do |t|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.string :title, { limit: 64, null: false }<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.text :body, { null: false }<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.timestamps(null: false)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end<br>
+      &nbsp;&nbsp;end<br>
+    end</p>
+
+    <p class="code">class CreateGuesses < ActiveRecord::Migration<br>
+      &nbsp;&nbsp;def change<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;create_table :guesses do |t|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.references    :user<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.references    :card<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.boolean       :correct?<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.timestamps(null: false)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end<br>
+      &nbsp;&nbsp;end<br>
+    end</p>
+
+    <p><u>COMPLEX SCHEMA, MODEL, AND MIGRATION FILE EXAMPLES:</u></p>
+
+    <img src="../imgs/shirts-schema.png" width="60%">
+
+    <p><u><i>Model Files:</u></i></p>
+
+    <p class="codewide">class User < ActiveRecord::Base<br>
+      has_many :designed_shirts, { :class_name => "Shirt", :foreign_key => :designer_id }<br>
+      has_many :purchases, { :foreign_key => :purchaser_id}<br>
+      has_many :purchased_shirts, { :through => :purchases, :source => :shirt}<br>
+      has_many :sales, { :through => :designed_shirts}<br>
+      has_many :clients, { :through => :sales, :source => :purchaser}<br>
+      has_many :supported_designers, { :through => :purchased_shirts, :source => :designer}<br>
+    end</p>
+
+    <p class="code">class Shirt < ActiveRecord::Base<br>
+      &nbsp;&nbsp;belongs_to :designer, { :class_name => "User" }<br>
+      &nbsp;&nbsp;has_many :sales, { :class_name => "Purchase" }<br>
+      &nbsp;&nbsp;has_many :purchasers, { :through => :sales}<br>
+    end</p>
+
+    <p class="code">class Purchase < ActiveRecord::Base<br>
+      &nbsp;&nbsp;belongs_to :purchaser, { :class_name => "User" }<br>
+      &nbsp;&nbsp;belongs_to :shirt<br>
+    end</p>
+
+
+    <p><u><i>Migration Files:</u></i></p>
+
+    <p class="code">class CreateUsers < ActiveRecord::Migration<br>
+      &nbsp;&nbsp;def change<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;create_table :users do |t|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.string :name<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.timestamps(null: false)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end<br>
+      &nbsp;&nbsp;end<br>
+    end</p>
+
+    <p class="code">class CreateShirts < ActiveRecord::Migration<br>
+      &nbsp;&nbsp;def change<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;create_table :shirts do |t|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.integer :designer_id<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.timestamps(null: false)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end<br>
+      &nbsp;&nbsp;end<br>
+    end</p>
+
+    <p class="code">class CreatePurchases < ActiveRecord::Migration<br>
+      &nbsp;&nbsp;def change<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;create_table :purchases do |t|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.integer :purchaser_id<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.integer :shirt_id<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.timestamps(null: false)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;end<br>
+      &nbsp;&nbsp;end<br>
+    end</p>

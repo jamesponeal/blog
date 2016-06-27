@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
 
@@ -11,6 +11,14 @@
 
 .background-00004d{
   background-color: #00004d;
+}
+
+.background-FFFBF7{
+  background-color: #FFFBF7;
+}
+
+.background-f0f0f5{
+  background-color: #f0f0f5;
 }
 
 .icon {
@@ -27,17 +35,17 @@
 .profilephoto {
   height: 300px;
   width: 216px;
-  border: 5px solid #f2f2f2;
-  border-radius: 20px;
+  border: 2px solid #337ab7;
+  border-radius: 10px;
   position: absolute;
   left: 50%;
   margin-left: -108px;
-  top: 75px;
+  top: 80px;
 }
 
 .index-title {
   position: absolute;
-  top: 24px;
+  top: 32px;
   width: 100%;
   text-align: center;
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
@@ -57,27 +65,28 @@
 
 .standard-text{
   font-family: 'open sans',arial,sans-serif;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/
   font-size: 16px;
 }
 
 .text-14p{
   font-family: 'open sans',arial,sans-serif;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/
   font-size: 14px;
 }
 
 .text-12p{
   font-family: 'open sans',arial,sans-serif;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/
   font-size: 12px;
 }
 
 .text-10p{
   font-family: 'open sans',arial,sans-serif;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/
   font-size: 10px;
 }
+
 
 .v-align{
   vertical-align: bottom;
@@ -85,7 +94,7 @@
 
 .courier-standard{
   font-family: 'Courier New', 'Courier', monospace;
-  color: #f2f2f2;
+  /*color: #f2f2f2;*/
   font-size: 16px;
 }
 
@@ -97,23 +106,29 @@
 .login-box{
   position: absolute;
   width: 200px;
-  top: 30px;
+  top: 40px;
   left: 80%;
   border: 2px solid #337ab7;
-  border-radius: 20px;
+  border-radius: 10px;
   z-index: 10;
-  background-color: #2e342a;
+  background-color: #f0f0f5;
   text-align: center;
+}
+
+.resume{
+  border: 2px solid #337ab7;
+  border-radius: 10px;
 }
 
 .blog-container{
   width: 60em;
   margin: 0 auto;
-  background-color: #3e4739;
+  background-color: #f0f0f5;
   border-radius: 10px;
   min-height: 80px;
   padding: 15px 15px 15px 15px;
 }
+
 
 
 .blog-row{
@@ -171,6 +186,8 @@ nav {
   font-weight: 100;
   color: #337ab7;
   font-size: 20px;
+  height: 35px;
+  line-height: 35px;
 }
 
 
@@ -186,8 +203,9 @@ nav:visited{
 }
 
 .code {
-  width: 50%;
+  width: 55%;
   font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
   border: 1px solid black;
   border-radius: 5px;
   padding-left: 0.5em;
@@ -200,6 +218,7 @@ nav:visited{
 .codewide {
   width: 90%;
   font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
   border: 1px solid black;
   border-radius: 5px;
   padding-left: 0.5em;

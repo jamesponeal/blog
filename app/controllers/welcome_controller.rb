@@ -8,5 +8,9 @@ class WelcomeController < ApplicationController
     render :about
   end
 
+  def project
+    render :project
+  end
+
 
 end

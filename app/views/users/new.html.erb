@@ -13,11 +13,15 @@
 <% end %>
 
 
-<div>
+<div class="blog-container mar-t-1">
   <%= render 'form' %>
 </div>
 
 <script>
+  $('#login-bar').removeClass();
+  $('#nav-bar').removeClass();
+  $('#login-bar').addClass('col-md-5');
+  $('#nav-bar').addClass('col-md-7');
   $('.nav-link').removeClass('nav-highlight');
   $('.create-link').addClass('nav-highlight');
 </script>
