@@ -12,7 +12,7 @@
         <li class="mar-t-1">
           <%= link_to post_path(post) do %>
             <button type="button" class="btn btn-primary btn-lg btn-block">
-              <span class="standard-text align-left"><%= post.title %></span><span class="text-12p align-right mar-t-1"><%= post.created_at.strftime('%m-%d-%Y') %></span>
+                <span class="standard-text align-left"><%= post.title %></span><span class="standard-text align-right"><%= post.created_at.strftime('%m-%d-%Y') %></span>
             </button>
           <% end %>
         </li>
