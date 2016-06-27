@@ -1,8 +1,9 @@
-<h2><span class="text-12p mar-r-1"><%= link_to '<-- Blog Home', posts_path %></span><%= @post.title %></h2>
+<h2>
+  <%= @post.title %>
+</h2>
+<h4>by Jim O'Neal on <%= @post.created_at.strftime('%B %d, %Y') %></h4>
+
 <div class="blog-container">
-  <div class="text-12p align-right">
-    <%= @post.created_at.strftime('%m-%d-%Y') %>
-  </div>
   <div class="standard-text">
     <%= @post.content.html_safe %>
   </div>
@@ -22,7 +23,7 @@
     </div>
     <div id="append-comment-form"></div>
   <% else %>
-    <p>Create an account or login to add a comment.</p>
+    <p class="standard-text">Create an account or login to add a comment.</p>
   <% end %>
   <% if @comments %>
     <ul>
