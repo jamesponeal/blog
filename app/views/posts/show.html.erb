@@ -1,6 +1,4 @@
-<h2>
-  <%= @post.title %>
-</h2>
+<h2><%= @post.title %></h2>
 <h4>by Jim O'Neal on <%= @post.created_at.strftime('%B %d, %Y') %></h4>
 
 <div class="blog-container">
@@ -16,7 +14,7 @@
   <% end %>
 </div>
 
-<div class="blog-container mar-t-1">
+<div class="blog-container mar-t-1 mar-b-1">
   <% if logged_in? %>
     <div class="comment-link mar-b-1">
       <%= link_to 'Add Comment', new_post_comment_path(@post), remote: true %>
@@ -38,6 +36,10 @@
 </div>
 
 <script>
-  $('.nav-link').removeClass('nav-highlight');
+  $('#login-bar').removeClass();
+  $('#nav-bar').removeClass();
+  $('#login-bar').addClass('col-md-5');
+  $('#nav-bar').addClass('col-md-7');
+  $('.nav-link').removeClass();
   $('.blog-link').addClass('nav-highlight');
 </script>

@@ -12,7 +12,7 @@
         <li class="mar-t-1">
           <%= link_to post_path(post) do %>
             <button type="button" class="btn btn-primary btn-lg btn-block">
-                <span class="standard-text align-left"><%= post.title %></span><span class="standard-text align-right"><%= post.created_at.strftime('%m-%d-%Y') %></span>
+                <span class="standard-text align-left"><%= post.title %></span><span class="standard-text align-right"><%= post.created_at.strftime('%B %d, %Y') %></span>
             </button>
           <% end %>
         </li>
@@ -24,8 +24,8 @@
 <script>
   $('#login-bar').removeClass();
   $('#nav-bar').removeClass();
-  $('#login-bar').addClass('col-md-5');
-  $('#nav-bar').addClass('col-md-7');
+  $('#login-bar').hide();
+  $('#nav-bar').addClass('col-md-12');
   $('.nav-link').removeClass();
   $('.blog-link').addClass('nav-highlight');
 </script>
