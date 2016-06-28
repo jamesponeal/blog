@@ -1,7 +1,35 @@
 <h1>Projects</h1>
-<div class="blog-container">
-  <p class="standard-text">UNDER CONSTRUCTION - PLEASE COME BACK LATER</p>
+<div class="row mar-t-1 mar-b-1">
+  <div class="grid-full">
+    <div class="projects">
+      <div class="slick-container">
+        <%= image_tag("projects/blog_project.png", class: "slick-image") %>
+        <div class="slick-text">Ruby on Rails Object-Oriented Blog</div>
+      </div><!--/Slide 1-->
+      <div class="slick-container">
+        <%= image_tag("projects/flickr_api_project.png", class: "slick-image") %>
+        <div class="slick-text">JavaScript, jQuery, and Ajax Flickr Web App</div>
+      </div><!--/Slide 2-->
+      <div class="slick-container">
+        <%= image_tag("projects/ooj_quiz_project.png", class: "slick-image") %>
+        <div class="slick-text">Object-Oriented JavaScript and jQuery Quiz</div>
+      </div><!--/Slide 3-->
+      <div class="slick-container">
+        <%= image_tag("projects/studionow_project.png", class: "slick-image") %>
+        <div class="slick-text">Ruby on Rails Object-Oriented Web App</div>
+      </div><!--/Slide 4-->
+      <div class="slick-container">
+        <%= image_tag("projects/wikijamz_project.png", class: "slick-image") %>
+        <div class="slick-text">Ruby on Rails Object-Oriented Web App</div>
+      </div><!--/Slide 5-->
+      <div class="slick-container">
+        <%= image_tag("projects/tic-tac-toe_project.png", class: "slick-image") %>
+        <div class="slick-text">Ruby Command Line App with AI Computer Player</div>
+      </div><!--/Slide 6-->
+    </div>
+  </div>
 </div>
+
 <script>
   $('#login-bar').removeClass();
   $('#nav-bar').removeClass();
@@ -9,4 +37,13 @@
   $('#nav-bar').addClass('col-md-12');
   $('.nav-link').removeClass('nav-highlight');
   $('.project-link').addClass('nav-highlight');
+
+  $('.projects').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000
+  });
 </script>
