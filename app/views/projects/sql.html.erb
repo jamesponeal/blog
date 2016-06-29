@@ -1,0 +1,86 @@
+<h2>SQL Reference Sheet</h2>
+<h4>by Jim O'Neal on January 6, 2016</h4>
+
+<div class="blog-container mar-t-1 mar-b-1">
+  <p class="standard-text">SQL is a programming language designed to manipulate and manage data stored in relational databases. A relational database is a database that organizes information into one or more tables. A table is a collection of data organized into rows and columns. A statement is a string of characters that the database recognizes as a valid command.</p>
+  <p class="text-18p"><strong>SQL BASICS:</strong></p>
+  <p class="text-14p">
+  <u>CREATE TABLE</u> creates a new table.<br>
+  <u>INSERT INTO</u> adds a new row to a table.<br>
+  <u>SELECT</u> queries data from a table.<br>
+  <u>UPDATE</u> edits a row in a table.<br>
+  <u>ALTER TABLE</u> changes an existing table.<br>
+  <u>DELETE FROM</u> deletes rows from a table.<br>
+  <u>WHERE</u> is a popular command that lets you filter the results of the query based on conditions that you specify.<br>
+  <u>LIKE</u> and <u>BETWEEN</u> are special operators that can be used in a WHERE clause.<br>
+  <u>AND</u> and <u>OR</u> are special operators that you can use with WHERE to filter the query on two or more conditions.<br>
+  <u>ORDER BY</u> lets you sort the results of the query in either ascending or descending order.<br>
+  <u>LIMIT</u> lets you specify the maximum number of rows that the query will return. This is especially important in large tables that have thousands or even millions of rows.</p>
+
+  <p class="standard-text"><i>Examples:</i></p>
+  <p class="codewide">
+  CREATE DATABASE movies_database;<br>
+  CREATE TABLE movies (name varchar(255), year int, imdb_rating decimal, fart_count int);<br>
+  ALTER TABLE movies ADD duration decimal;<br>
+  ALTER TABLE movies DROP COLUMN fart_count;<br>
+  ALTER TABLE movies MODIFY COLUMN duration int;<br>
+  SELECT name, imdb_rating FROM movies;<br>
+  SELECT * FROM movies WHERE imdb_rating > 8;<br>
+  SELECT * FROM movies WHERE name LIKE 'Se_en';<br>
+  SELECT * FROM movies WHERE name LIKE '%man%';<br>
+  SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J';<br>
+  SELECT * FROM movies WHERE year BETWEEN 1990 AND 2000 AND genre = 'comedy';<br>
+  SELECT * FROM movies ORDER BY imdb_rating DESC;<br>
+  SELECT * FROM books WHERE author="Jodi Picoult" ORDER BY year_published;<br>
+  (Note: 'DESC' means descending and 'ASC' means ascending)<br>
+  INSERT INTO movies (name, year, imdb_rating, duration) VALUES ('Ghostbusters', '1984', '7.8', '105');
+  </p>
+
+  <p class="text-18p"><strong>SQL AGGREGATE FUNCTIONS:</strong></p>
+
+  <p class="standard-text">Aggregate functions combine multiple rows together to form a single value of more meaningful information.</p>
+  <p class="text-14p">
+  <u>COUNT</u> takes the name of a column(s) as an argument and counts the number of rows where the value(s) is not NULL.<br>
+  <u>GROUP BY</u> is a clause used with aggregate functions to combine data from one or more columns.<br>
+  <u>SUM()</u> takes the column name as an argument and returns the sum of all the values in that column.<br>
+  <u>MAX()</u> takes the column name as an argument and returns the largest value in that column.<br>
+  <u>MIN()</u> takes the column name as an argument and returns the smallest value in that column.<br>
+  <u>AVG()</u> takes a column name as an argument and returns the average value for that column.<br>
+  <u>ROUND()</u> takes two arguments, a column name and the number of decimal places to round the values in that column.</p>
+
+  <p class="standard-text"><i>Examples:</i></p>
+  <p class="codewide">
+  SELECT ROUND(price, 2) FROM products;<br>
+  SELECT SUM(duration) FROM movies;<br>
+  SELECT MAX(imdb_rating) FROM movies;<br>
+  SELECT country, population FROM countries WHERE population=(SELECT MIN(population) FROM world);<br>
+  SELECT COUNT(*) AS NumberOfCountries FROM world;<br>
+  SELECT COUNT(DISTINCT continent) FROM world;<br>
+  SELECT price, ROUND(AVG(downloads)) FROM fake_apps GROUP BY price;<br>
+  </p>
+
+  <p class="text-18p"><strong>SQL MULTIPLE TABLES:</strong></p>
+  <p class="text-14p">
+  <u>Primary Key</u> is a column that serves a unique identifier for row in the table. Values in this column must be unique and cannot be NULL.<br>
+  <u>Foreign Key</u> is a column that contains the primary key to another table in the database. It is used to identify a particular row in the referenced table.<br>
+  <br>
+  Joins are used in SQL to combine data from multiple tables.<br>
+  <u>INNER JOIN</u> will combine rows from different tables if the join condition is true.<br>
+  <u>LEFT OUTER JOIN</u> will return every row in the left table, and if the join condition is not met, NULL values are used to fill in the columns from the right table.<br>
+  <u>AS</u> is a keyword in SQL that allows you to rename a column or table in the result set using an alias.
+  </p>
+
+  <p class="standard-text"><i>Examples:</i></p>
+  <p class="codewide">
+  SELECT * FROM albums JOIN artists ON albums.artist_id = artists.id;<br>
+  SELECT region_name, state_name FROM regions JOIN states ON regions.id = states.region_id ORDER BY region_id ASC;</p>
+</div>
+
+<script>
+  $('#login-bar').removeClass();
+  $('#nav-bar').removeClass();
+  $('#login-bar').hide();
+  $('#nav-bar').addClass('col-md-12');
+  $('.nav-link').removeClass('nav-highlight');
+  $('.project-link').addClass('nav-highlight');
+</script>
