@@ -8,5 +8,9 @@ class ProjectsController < ApplicationController
     render :active_record
   end
 
+  def sql_reference
+    render :sql
+  end
+
 
 end
