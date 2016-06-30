@@ -12,5 +12,9 @@ class ProjectsController < ApplicationController
     render :sql
   end
 
+  def flickr
+    render :flickr_api
+  end
+
 
 end

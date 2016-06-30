@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="assets/stylesheets/flickr.css">
+
+<h1>Flickr Photo Search</h1>
+<div class="blog-container-wide mar-t-1 mar-b-1">
+    <div class="grid-100">
+            <form><center>
+              <label for="search" class="standard-text">Type a photo tag you would like to search for: </label>
+              <input type="search" name="search" id="search">
+              <input type="submit" value="Search" id="submit">
+            </center></form>
+        <div id="photos">
+        </div>
+    </div>
+</div>
+
+
+<script>
+  $('#login-bar').removeClass();
+  $('#nav-bar').removeClass();
+  $('#login-bar').hide();
+  $('#nav-bar').addClass('col-md-12');
+  $('.nav-link').removeClass('nav-highlight');
+  $('.project-link').addClass('nav-highlight');
+
+  $(document).ready(function(){
+    $('form').submit(function(evt){
+      evt.preventDefault();
+      var flickerURL = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      var searchItem = $('#search').val();
+      //console.log(searchItem);
+      var flickrOptions = {
+        tags: searchItem,
+        format: "json"
+      };
+      function displayPhotos(data){
+        var photoHTML = '<ul class="no-bullets">';
+        $.each( data.items, function(i, photo){
+          photoHTML += '<li class="grid-25 tablet-grid-50">'
+          photoHTML += '<a href="' + photo.link + '" class="image">';
+          photoHTML += '<img src="' + photo.media.m + '"></a></li>';
+        }); // end each
+        photoHTML += '</ul>';
+        $('#photos').html(photoHTML);
+      };
+      $.getJSON(flickerURL, flickrOptions, displayPhotos);
+    }); // end submit
+  }); // end ready
+</script>
