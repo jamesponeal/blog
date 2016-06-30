@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="assets/stylesheets/flickr.css">
-
 <h1>Flickr Photo Search</h1>
 <div class="blog-container-wide mar-t-1 mar-b-1">
     <div class="grid-100">
@@ -25,7 +23,7 @@
   $(document).ready(function(){
     $('form').submit(function(evt){
       evt.preventDefault();
-      var flickerURL = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      var flickerURL = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
       var searchItem = $('#search').val();
       //console.log(searchItem);
       var flickrOptions = {
