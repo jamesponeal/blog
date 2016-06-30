@@ -16,5 +16,9 @@ class ProjectsController < ApplicationController
     render :flickr_api
   end
 
+  def quiz
+    render :movie_quiz
+  end
+
 
 end
