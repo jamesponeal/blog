@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-3.0.0.min
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require slick
+//= require quiz
+//= require quiz_question
 //= require_tree .

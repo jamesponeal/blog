@@ -210,8 +210,8 @@ nav:visited{
 }
 
 
-.v-align{
-  vertical-align: bottom;
+.v-align-middle{
+  vertical-align: middle;
 }
 
 
@@ -311,7 +311,7 @@ nav:visited{
 .slick-container {
   background-color: #f0f0f5;
   border-radius: 10px;
-  height: 250px;
+  height: 220px;
   padding: 5px;
   margin: 5px;
 }
@@ -551,6 +551,10 @@ nav:visited{
 
 .pad-b-5 {
   padding-bottom: 5em;
+}
+
+.pad-t-03{
+  padding-top: 0.3em;
 }
 
 .pad-t-1 {

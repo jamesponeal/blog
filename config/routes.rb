@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   get '/projects/active_record' => 'projects#active_record', as: 'active_record'
   get '/projects/sql' => 'projects#sql_reference', as: 'sql'
   get '/projects/flickr' => 'projects#flickr', as: 'flickr'
+  get '/projects/quiz' => 'projects#quiz', as: 'quiz'
 
 end
