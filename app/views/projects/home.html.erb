@@ -3,11 +3,11 @@
   <div class="grid-full">
     <div class="projects">
       <div class="slick-container"><!--Slide 1-->
-        <%= image_tag("projects/blog_project.png", class: "slick-image") %>
+        <%= link_to image_tag("projects/blog_project.png", class: "slick-image"), posts_path %>
         <div class="slick-text">Personal Blog: Ruby on Rails Object-Oriented Project</div>
       </div>
       <div class="slick-container"><!--Slide 2-->
-        <%= image_tag("projects/flickr_api_project.png", class: "slick-image") %>
+        <%= link_to image_tag("projects/flickr_api_project.png", class: "slick-image"), flickr_path %>
         <div class="slick-text">Flickr Photo Scraping Tool: JavaScript, jQuery, and Ajax Flickr Web App</div>
       </div>
       <div class="slick-container"><!--Slide 3-->

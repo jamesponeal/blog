@@ -243,8 +243,16 @@ nav:visited{
   background-color: #f0f0f5;
   border: 2px solid #337ab7;
   border-radius: 10px;
-  min-height: 80px;
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
+}
+
+.blog-container-wide{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #f0f0f5;
+  border: 2px solid #337ab7;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 
@@ -303,9 +311,9 @@ nav:visited{
 .slick-container {
   background-color: #f0f0f5;
   border-radius: 10px;
-  height: 220px;
-  padding: 10px;
-  margin: 10px;
+  height: 250px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .slick-image{
@@ -625,8 +633,6 @@ nav:visited{
 }
 
 /* -- END PIPE SEPARATING -- */
-
-
 
 
 
