@@ -41,6 +41,16 @@
     </div>
   </div>
 </div>
+<div class="row mar-t-3">
+  <div class="blog-container"><center>
+    <p class="standard-text">Hi there, my name is Jim.  Welcome to my website!</p>
+    <p class="standard-text">I built this website from scratch using HTML, CSS, Ruby on Rails, JavaScript, and jQuery.<br>I am using a PostgreSQL database hosted on Heroku.</p>
+    <p class="standard-text">To learn more about me, check out my <%= link_to 'About Me', about_path %> page, <%= link_to 'Resume', resume_path %>, or <%= link_to 'Blog', posts_path %>!</p>
+    <a href="https://www.linkedin.com/in/jamesponeal"><%= image_tag("icons/linkedin-icon.png", class: "icon") %></a>
+    <a href="https://github.com/jamesponeal"><%= image_tag("icons/github-icon.png", class: "icon") %></a>
+    <a href="https://twitter.com/jamesponeal"><%= image_tag("icons/twitter-icon.png", class: "icon") %></a>
+  </center></div>
+</div>
 
 <script>
   $('#login-bar').removeClass();
