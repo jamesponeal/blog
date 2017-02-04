@@ -91,6 +91,10 @@ h4{
 
 /* -- BACKGROUNDS -- */
 
+.background-white{
+  background-color: white;
+}
+
 .background-2e342a{
   background-color: #2e342a;
 }
@@ -233,26 +237,33 @@ nav:visited{
 }
 
 .resume{
-  border: 2px solid #337ab7;
+  border: 1px solid #337ab7;
   border-radius: 10px;
 }
 
 .blog-container{
-  width: 60em;
+  width: 70%;
   margin: 0 auto;
   background-color: #f0f0f5;
-  border: 2px solid #337ab7;
-  border-radius: 10px;
-  padding: 15px;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.blog-show-container{
+  background-color: white;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .blog-container-wide{
   width: 90%;
   margin: 0 auto;
   background-color: #f0f0f5;
-  border: 2px solid #337ab7;
-  border-radius: 10px;
-  padding: 15px;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 
