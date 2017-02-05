@@ -10,13 +10,12 @@
 @import url(https://fonts.googleapis.com/css?family=BenchNine:400,300);
 
 .index-title {
-  position: absolute;
   top: 32px;
-  width: 100%;
   text-align: center;
   font-family: 'Copperplate', 'Copperplate Gothic Light', sans-serif;
   font-weight: 100;
   font-size: 36px;
+  color: #f0f0f5;
 }
 
 .text-18p{
@@ -93,6 +92,10 @@ h4{
 
 .background-white{
   background-color: white;
+}
+
+.background-black{
+  background-color: black;
 }
 
 .background-2e342a{
@@ -183,12 +186,8 @@ nav:visited{
 .profilephoto {
   height: 300px;
   width: 216px;
-  border: 2px solid #337ab7;
+  border: 1px solid #337ab7;
   border-radius: 10px;
-  position: absolute;
-  left: 50%;
-  margin-left: -108px;
-  top: 80px;
 }
 
 .width-80 {
@@ -197,6 +196,10 @@ nav:visited{
 
 .width-100 {
   width: 100%;
+}
+
+.height-46em {
+  height: 46em;
 }
 
 .z-1 {
@@ -309,6 +312,11 @@ nav:visited{
   color: #B0B0B0;
 }
 
+#skyline-background {
+  background-image: url("chicago-skyline-2.jpg");
+  background-size: 100% 100%;
+}
+
 /* -- SLICK CAROUSEL -- */
 
 .slick-text{
@@ -331,8 +339,8 @@ nav:visited{
   width: 100%;
   height: 90%;
   padding: 2px;
-  border: 2px solid #337ab7;
-  border-radius: 8px;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
 }
 
 .slick-dots li button:before {
